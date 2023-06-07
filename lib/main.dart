@@ -54,7 +54,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   BoxShadow(
                     color: Color(0xFFFFD700),
                     blurRadius: 30.0, // soften the shadow
-                    spreadRadius: 0.0, //extend the shadow
+                    spreadRadius: -5.0, //extend the shadow
                     offset: Offset(
                       0.0, // Move to right 10  horizontally
                       0.0, // Move to bottom 10 Vertically
@@ -77,14 +77,14 @@ class _MyHomePageState extends State<MyHomePage> {
                     children: [
                       const SizedBox(
                         height: 10,
-                      ), //SizedBox
-                      Text(
+                      ),
+                      const Text(
                         'Upcoming',
                         style: TextStyle(
                           fontSize: 30,
-                          color: Colors.green[900],
+                          color: Color(0xFFFFD700),
                           fontWeight: FontWeight.w500,
-                        ), //Textstyle
+                        ),
                       ), //Text
                       const SizedBox(
                         height: 10,
@@ -94,11 +94,11 @@ class _MyHomePageState extends State<MyHomePage> {
                         style: TextStyle(
                           fontSize: 15,
                           color: Colors.green,
-                        ), //Textstyle
-                      ), //Text
+                        ),
+                      ),
                       const SizedBox(
                         height: 10,
-                      ), //SizedBox
+                      ),
                       SizedBox(
                         width: 100,
                         child: ElevatedButton(
@@ -146,9 +146,9 @@ class _MyHomePageState extends State<MyHomePage> {
           tooltip: 'Edit Workout',
           backgroundColor: const Color(0xFFFFD700),
           foregroundColor: Colors.black,
-          label: const Text("Edit"),
+          label: const Text("Edit Workout"),
           icon: const Icon(Icons.edit),
-        ), // This trailing comma makes auto-formatting nicer for build methods.
+        ),
       ),
     );
   }
