@@ -162,7 +162,7 @@ class _MyHomePageState extends State<MyHomePage> {
               ),
             ),
             Container(
-              width: 350,
+              width: 300,
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(30),
                 boxShadow: const [

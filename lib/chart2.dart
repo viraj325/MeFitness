@@ -167,7 +167,7 @@ class _LineChart extends StatelessWidget {
     show: true,
     border: Border(
       bottom:
-      BorderSide(color: AppColors.primary.withOpacity(0.2), width: 4),
+      BorderSide(color: Colors.red.withOpacity(0.2), width: 4),
       left: const BorderSide(color: Colors.transparent),
       right: const BorderSide(color: Colors.transparent),
       top: const BorderSide(color: Colors.transparent),
@@ -176,10 +176,10 @@ class _LineChart extends StatelessWidget {
 
   LineChartBarData get lineChartBarData1_1 => LineChartBarData(
     isCurved: true,
-    color: AppColors.contentColorGreen,
+    color: Colors.green,
     barWidth: 8,
     isStrokeCapRound: true,
-    dotData: const FlDotData(show: false),
+    dotData: FlDotData(show: false),
     belowBarData: BarAreaData(show: false),
     spots: const [
       FlSpot(1, 1),
@@ -194,13 +194,13 @@ class _LineChart extends StatelessWidget {
 
   LineChartBarData get lineChartBarData1_2 => LineChartBarData(
     isCurved: true,
-    color: AppColors.contentColorPink,
+    color: Colors.pink,
     barWidth: 8,
     isStrokeCapRound: true,
-    dotData: const FlDotData(show: false),
+    dotData: FlDotData(show: false),
     belowBarData: BarAreaData(
       show: false,
-      color: AppColors.contentColorPink.withOpacity(0),
+      color: Colors.pink.withOpacity(0),
     ),
     spots: const [
       FlSpot(1, 1),
@@ -214,10 +214,10 @@ class _LineChart extends StatelessWidget {
 
   LineChartBarData get lineChartBarData1_3 => LineChartBarData(
     isCurved: true,
-    color: AppColors.contentColorCyan,
+    color: Colors.cyan,
     barWidth: 8,
     isStrokeCapRound: true,
-    dotData: const FlDotData(show: false),
+    dotData: FlDotData(show: false),
     belowBarData: BarAreaData(show: false),
     spots: const [
       FlSpot(1, 2.8),
@@ -231,10 +231,10 @@ class _LineChart extends StatelessWidget {
   LineChartBarData get lineChartBarData2_1 => LineChartBarData(
     isCurved: true,
     curveSmoothness: 0,
-    color: AppColors.contentColorGreen.withOpacity(0.5),
+    color: Colors.green.withOpacity(0.5),
     barWidth: 4,
     isStrokeCapRound: true,
-    dotData: const FlDotData(show: false),
+    dotData: FlDotData(show: false),
     belowBarData: BarAreaData(show: false),
     spots: const [
       FlSpot(1, 1),
@@ -249,13 +249,13 @@ class _LineChart extends StatelessWidget {
 
   LineChartBarData get lineChartBarData2_2 => LineChartBarData(
     isCurved: true,
-    color: AppColors.contentColorPink.withOpacity(0.5),
+    color: Colors.pink.withOpacity(0.5),
     barWidth: 4,
     isStrokeCapRound: true,
-    dotData: const FlDotData(show: false),
+    dotData: FlDotData(show: false),
     belowBarData: BarAreaData(
       show: true,
-      color: AppColors.contentColorPink.withOpacity(0.2),
+      color: Colors.pink.withOpacity(0.2),
     ),
     spots: const [
       FlSpot(1, 1),
@@ -270,10 +270,10 @@ class _LineChart extends StatelessWidget {
   LineChartBarData get lineChartBarData2_3 => LineChartBarData(
     isCurved: true,
     curveSmoothness: 0,
-    color: AppColors.contentColorCyan.withOpacity(0.5),
+    color: Colors.cyan.withOpacity(0.5),
     barWidth: 2,
     isStrokeCapRound: true,
-    dotData: const FlDotData(show: true),
+    dotData: FlDotData(show: true),
     belowBarData: BarAreaData(show: false),
     spots: const [
       FlSpot(1, 3.8),
@@ -316,7 +316,7 @@ class LineChartSample1State extends State<LineChartSample1> {
               const Text(
                 'Monthly Sales',
                 style: TextStyle(
-                  color: AppColors.primary,
+                  color: Colors.yellow,
                   fontSize: 32,
                   fontWeight: FontWeight.bold,
                   letterSpacing: 2,
