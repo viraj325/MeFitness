@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:me_fitness/chart.dart';
 
 void main() {
   runApp(const MyApp());
@@ -153,6 +154,44 @@ class _MyHomePageState extends State<MyHomePage> {
               alignment: Alignment.centerLeft,
               child: const Text(
                 'Stats',
+                style: TextStyle(
+                  fontSize: 30,
+                  color: Color(0xFFFFD700),
+                  fontWeight: FontWeight.w500,
+                ),
+              ),
+            ),
+            Container(
+              width: 350,
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(30),
+                boxShadow: const [
+                  BoxShadow(
+                    color: Color.fromRGBO(100, 100, 100, 1.0),
+                    blurRadius: 15.0, // soften the shadow
+                    spreadRadius: -5.0, //extend the shadow
+                    offset: Offset(
+                      0.0, // Move to right 10  horizontally
+                      0.0, // Move to bottom 10 Vertically
+                    ),
+                  ),
+                ],
+              ),
+              child: Card(
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(30),
+                ),
+                // elevation: 15,
+                // shadowColor: const Color(0xFFFFD700),
+                color: Colors.black,
+                child: const LineChartSample2(),
+              )
+            ),
+            Container(
+              padding: const EdgeInsets.only(left: 30.0, top: 50.0, bottom: 25.0),
+              alignment: Alignment.centerLeft,
+              child: const Text(
+                'History',
                 style: TextStyle(
                   fontSize: 30,
                   color: Color(0xFFFFD700),
