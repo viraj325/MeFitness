@@ -31,11 +31,9 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
-
-  void _incrementCounter() {
+  void _navigateToEditPage() {
     setState(() {
-      _counter++;
+
     });
   }
 
@@ -52,7 +50,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 borderRadius: BorderRadius.circular(30),
                 boxShadow: const [
                   BoxShadow(
-                    color: Color(0xFFFFD700),
+                    color: Color.fromRGBO(100, 100, 100, 1.0),
                     blurRadius: 30.0, // soften the shadow
                     spreadRadius: -5.0, //extend the shadow
                     offset: Offset(
@@ -82,7 +80,7 @@ class _MyHomePageState extends State<MyHomePage> {
                         'Upcoming',
                         style: TextStyle(
                           fontSize: 30,
-                          color: Color(0xFFFFD700),
+                          color: Color.fromRGBO(100, 100, 100, 1.0),
                           fontWeight: FontWeight.w500,
                         ),
                       ), //Text
@@ -90,10 +88,10 @@ class _MyHomePageState extends State<MyHomePage> {
                         height: 10,
                       ), //SizedBox
                       const Text(
-                        'GeeksforGeeks is a computer science portal for geeks at geeksforgeeks.org. It contains well written, well thought and well explained computer science and programming articles, quizzes, projects, interview experiences and much more!!',
+                        'Workout',
                         style: TextStyle(
                           fontSize: 15,
-                          color: Colors.green,
+                          color: Color.fromRGBO(150, 150, 150, 1.0),
                         ),
                       ),
                       const SizedBox(
@@ -102,16 +100,27 @@ class _MyHomePageState extends State<MyHomePage> {
                       SizedBox(
                         width: 100,
                         child: ElevatedButton(
-                          onPressed: () => 'Null',
-                          style: ButtonStyle(
-                              backgroundColor:
-                              MaterialStateProperty.all(Colors.green)),
+                          onPressed: () {},
+                          style: ElevatedButton.styleFrom(
+                            shadowColor: const Color(0xFFFFD700),
+                            backgroundColor: const Color(0xFFFFD700),
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(30),
+                            ),
+                            elevation: 15.0,
+                          ),
                           child: const Padding(
                             padding: EdgeInsets.all(4),
                             child: Row(
                               children: [
-                                Icon(Icons.touch_app),
-                                Text('Visit')
+                                Icon(
+                                  Icons.touch_app,
+                                  color: Colors.black,
+                                ),
+                                Text(
+                                  'Visit',
+                                  style: TextStyle(color: Colors.black),
+                                )
                               ],
                             ),
                           ),
@@ -142,7 +151,7 @@ class _MyHomePageState extends State<MyHomePage> {
           ],
         ),
         child: FloatingActionButton.extended(
-          onPressed: _incrementCounter,
+          onPressed: _navigateToEditPage,
           tooltip: 'Edit Workout',
           backgroundColor: const Color(0xFFFFD700),
           foregroundColor: Colors.black,
