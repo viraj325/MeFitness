@@ -1,3 +1,7 @@
+import 'dart:convert';
+import 'package:flutter/foundation.dart';
+import 'package:me_fitness/object.dart';
+import 'package:me_fitness/variables.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class LocalShared {
@@ -18,20 +22,25 @@ class LocalShared {
     return "Some string";
   }
 
-  static Future<void> write() async {
-    // Obtain shared preferences.
+  static Future<void> writeWorkoutByDay(Exercise exercise) async {
     final SharedPreferences prefs = await SharedPreferences.getInstance();
+    Map<String, dynamic> jsonExercise = {
+      'Day': exercise.day,
+      'Name': exercise.name,
+      'Reps': exercise.reps,
+      'Sets': exercise.sets,
+      'Description': exercise.description
+    };
 
-    // Save an integer value to 'counter' key.
-    await prefs.setInt('counter', 10);
-    // Save an boolean value to 'repeat' key.
-    await prefs.setBool('repeat', true);
-    // Save an double value to 'decimal' key.
-    await prefs.setDouble('decimal', 1.5);
-    // Save an String value to 'action' key.
-    await prefs.setString('action', 'Start');
-    // Save an list of strings to 'items' key.
-    await prefs.setStringList('items', <String>['Earth', 'Moon', 'Sun']);
+    bool result = await prefs.setString(exercise.day as String, jsonEncode(jsonExercise));
+    if (kDebugMode) {
+      print("writeWorkoutByDay: $result");
+    }
+  }
+
+  static Future<void> updateListOfDays(List<String> listOfDays) async {
+    final SharedPreferences prefs = await SharedPreferences.getInstance();
+    await prefs.setStringList(Variables.daysKey, listOfDays);
   }
 
   static Future<void> update() async {
