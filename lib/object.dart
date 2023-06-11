@@ -1,4 +1,5 @@
 class Exercise {
+  String id = DateTime.now().millisecondsSinceEpoch as String;
   int day;
   String name;
   int reps;

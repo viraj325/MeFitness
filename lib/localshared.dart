@@ -25,6 +25,11 @@ class LocalShared {
     return listOfExercises;
   }
 
+  static Future<List<String>?> readListOfExercisesForWeights() async {
+    final SharedPreferences prefs = await SharedPreferences.getInstance();
+    return prefs.getStringList(Variables.weightStatsKey);
+  }
+
   static Future<void> writeWorkoutByDay(Exercise exercise) async {
     final SharedPreferences prefs = await SharedPreferences.getInstance();
     Map<String, dynamic> jsonExercise = {
@@ -44,6 +49,15 @@ class LocalShared {
   static Future<void> updateListOfDays(List<String> listOfDays) async {
     final SharedPreferences prefs = await SharedPreferences.getInstance();
     await prefs.setStringList(Variables.daysKey, listOfDays);
+  }
+
+  static Future<void> updateListOfExercisesForWeights(String exerciseName) async {
+    final SharedPreferences prefs = await SharedPreferences.getInstance();
+    List<String> listOfExercises = readListOfExercisesForWeights() as List<String>;
+    if (!listOfExercises.contains(exerciseName)) {
+      listOfExercises.add(exerciseName);
+      await prefs.setStringList(Variables.weightStatsKey, listOfExercises);
+    }
   }
 
   static Future<void> delete(String key) async {
